@@ -4,20 +4,20 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import FormControl from 'react-bootstrap/FormControl';
 import Form from 'react-bootstrap/Form';
-import SignUp from '../src/components/SignUp';
+import Signup from '../Login-Signup/SignUp'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import Login from './components/Login';
+import Login from '../Login-Signup/Login';
 
 function LandingPage() {
 
-    const [visible, setVisible] = useState(false);
-    const [signupVisible, setSignupVisible] = useState(true);
+    const [Visible, setVisible] = useState(true);
+  //  const [signupVisible, setSignupVisible] = useState(true);
 
      const onButtonClicked = () => {
-        setVisible(true);
-        setSignupVisible(false);
+        setVisible(false);
+      //  setSignupVisible(false);
        
     }
 
@@ -32,10 +32,11 @@ function LandingPage() {
             <Nav.Link href="#pricing"></Nav.Link>
             </Nav>
         </Navbar>
+        
         <br/>
 
         {
-                   signupVisible ? <SignUp/>  : <Login/>
+                   Visible ? <Login/> : <Signup/>
 
                 }
                
@@ -47,8 +48,8 @@ function LandingPage() {
             <Col>
             
                 {
-                    signupVisible ? <Button variant="primary" type="submit" onClick={onButtonClicked}>
-                    Login Here!
+                    Visible ? <Button variant="primary" type="submit" onClick={onButtonClicked}>
+                    Register Here!
                 </Button> : null
                 }
                 

@@ -6,18 +6,16 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import {useForm} from 'react-hook-form';
-//import Alert from 'react-bootstrap/Alert';
-import { Alert } from 'reactstrap';
+import { useHistory } from 'react-router-dom';
+
 import axios from 'axios';
 
-function Login() {
+function Login(props) {
 
-    
+    const history = useHistory();
     const {register, handleSubmit} = useForm(); 
     const [response, setResponse] = useState('');
-    const [visible, setVisible] = useState(true);
 
-    const onDismiss = () => setVisible(false);
 
     const onSubmit = (data) => {
         console.log(data);
@@ -25,6 +23,9 @@ function Login() {
             .then(res => {
                 console.log(res);
                setResponse(res.data);
+    
+               localStorage.setItem("user", JSON.stringify(res.data));
+               history.push("/home");
             })
             .catch(err => {
                 console.log(err);
@@ -35,9 +36,6 @@ function Login() {
     return (
         <div>
             
-         <Alert color="info" isOpen={visible} toggle={onDismiss}>
-        {response}
-    </Alert>
             <Container>
                 <Row>
                     <Col></Col>
@@ -70,4 +68,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Login;

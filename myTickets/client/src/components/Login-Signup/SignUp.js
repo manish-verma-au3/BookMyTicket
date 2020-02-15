@@ -1,28 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import FormControl from 'react-bootstrap/FormControl';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import {useForm} from 'react-hook-form';
-//import Alert from 'react-bootstrap/Alert';
-import Login from './Login';
-import { Alert } from 'reactstrap';
 import axios from 'axios';
 
 
 function SignUp() {
-    
-  //  const[user, setUser] = useState({username:'', number:'', email:'', password:''})
 
     const {register, handleSubmit} = useForm(); 
     const [response, setResponse] = useState('');
-    const [visible, setVisible] = useState(true);
-
-    
-
-    const onDismiss = () => setVisible(false);
+  
 
     
     const onSubmit = (data) => {
@@ -41,17 +32,14 @@ function SignUp() {
     return (
         <div>
 
-         <Alert color="info" isOpen={visible} toggle={onDismiss}>
-        {response}
-    </Alert>
-            <Container>
-                <Row>
-                    <Col></Col>
-                    <Col></Col>
-                    <Col>
-                    <h2>SignUp!</h2>
-                    <hr/>
-                    <Form  onSubmit={handleSubmit(onSubmit)}>  
+             <Container>
+                 <Row>
+                     <Col></Col>
+                     <Col></Col>
+                     <Col>
+                     <h2>SignUp!</h2>
+                     <hr/>  
+                   <Form  onSubmit={handleSubmit(onSubmit)}>  
                  <Form.Group controlId="formBasicName">
                     <Form.Label>UserName</Form.Label>
                     <Form.Control name='username' placeholder="Enter username" ref={register} />
@@ -81,14 +69,14 @@ function SignUp() {
                
               </Form>
 
-                  </Col>
+
+                 </Col>
                 </Row>  
-            </Container>
-            
+            </Container> 
             
 
         </div>
     )
 }
 
-export default SignUp
+export default SignUp 
