@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
-//import TestApi from './TestApi';
+import {BrowserRouter as Router, Route, Redirect, Switch} from "react-router-dom";
 import LandingPage from './LandingPage/LandingPage'
-import Home from './Pages/Home/Home';
-import Poster from './Movie-slider/poster';
+import Movies from "../pages/Movies/Movies";
+import Sports from "../pages/Sports/Sports";
+import Events from "../pages/Events/Events";
+import Buzz from "../pages/Buzz/Buzz";
+
 
 class App extends React.Component {
 
@@ -12,7 +14,7 @@ class App extends React.Component {
       let loggedIn = localStorage.getItem("user");
 
       if(loggedIn){
-          return <Redirect to='/home'/>
+          return <Redirect to='/movies'/>
       }else{
           return <Redirect to='/login'/>                        
       }
@@ -21,9 +23,14 @@ class App extends React.Component {
      
       return (
           <Router>
-              <Route path="/home" component={Home}/>
+              <Switch>
               <Route path="/login" component={LandingPage}/>
+              <Route path='/movies' component={Movies}/>
+              <Route path="/sports" component={Sports} />
+              <Route path="/events" component={Events} />
+              <Route path="/buzz" component={Buzz} />
                {this.doRedirect()}
+               </Switch>
           </Router>
       )
   }

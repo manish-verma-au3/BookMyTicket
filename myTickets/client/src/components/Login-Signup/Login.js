@@ -25,7 +25,7 @@ function Login(props) {
                setResponse(res.data);
     
                localStorage.setItem("user", JSON.stringify(res.data));
-               history.push("/home");
+               history.push("/movies");
             })
             .catch(err => {
                 console.log(err);
