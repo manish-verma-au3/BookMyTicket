@@ -5,7 +5,7 @@ const Events = () => {
   return (
     <div>
       <Header />
-      <h1>Events components</h1>
+      <h2>Event components</h2>
     </div>
   );
 };

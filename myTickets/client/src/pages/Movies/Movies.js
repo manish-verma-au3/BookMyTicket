@@ -1,19 +1,15 @@
-import React from 'react';
-import Poster from '../../components/Movie-slider/poster';
-import Header from '../../components/Header/Header';
-//import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
+import React from "react";
+import Header from "../../components/Header/Header";
+import Carousel from "../../components/Slider/Carousel";
 
-function Movies() {
-    
-    return (
-        <div >
-          <Header/>
-         
-             <Poster/>
-        
-           
-        </div>
-    )
-}
+const Movies = () => {
+  return (
+    <div>
+      <Header />
+      <h3>movies crousel</h3>
+      <Carousel/>
+    </div>
+  );
+};
 
-export default Movies
+export default Movies;

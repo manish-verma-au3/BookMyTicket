@@ -2,14 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './sass/main.scss';
 import App from './components/App';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 //cousel
-import "react-alice-carousel/lib/scss/alice-carousel.scss";
-import "react-alice-carousel/lib/alice-carousel.css";
-import "react-alice-carousel/lib/alice-carousel.css";
+
 
 import * as serviceWorker from './serviceWorker';
 

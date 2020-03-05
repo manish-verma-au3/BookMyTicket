@@ -18,7 +18,7 @@ const PrimaryNav = () => {
         className="primary-nav"
       >
         <Navbar.Brand href="#home" className="ml-lg-5">
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/home" style={{ textDecoration: "none" }}>
             {" "}
             <Logo />
           </Link>

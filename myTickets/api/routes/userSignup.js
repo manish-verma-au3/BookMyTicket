@@ -37,7 +37,7 @@ router.post('/add', async (req, res, next) => {
                 }else{
                     //email in use
                       res.send('email in use')
-                      console.log('email in use')
+                      console.log('email already in use!')
                     }
                 })
                 .catch(err => {
@@ -61,7 +61,6 @@ router.post('/login', async (req, res, next) => {
                                if(result){
                                    const token = jwt.sign({ _id: login._id}, process.env.TOKEN_SECRET);
                                    res.header('auth-token', token).send(token);
-                                   
                                }else{
                                    res.send('Invalid password or Email');
                                }
