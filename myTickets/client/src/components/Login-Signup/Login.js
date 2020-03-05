@@ -43,23 +43,23 @@ const onSubmit = (data) => {
         })
 }
 
-const imageUrl = windowWidth >= 650 ? desktopImage : mobileImage;
+// const imageUrl = windowWidth >= 650 ? desktopImage : mobileImage;
 
-const handleWindowResize = () => {
-    setWindowWidth(window.innerWidth);
-};
+// const handleWindowResize = () => {
+//     setWindowWidth(window.innerWidth);
+// };
 
-useEffect(() => {
-    window.addEventListener('resize', handleWindowResize);
+// useEffect(() => {
+//     window.addEventListener('resize', handleWindowResize);
 
-    return () => {
-        window.removeEventListener('resize', handleWindowResize);
-    }
-});
+//     return () => {
+//         window.removeEventListener('resize', handleWindowResize);
+//     }
+// });
 
 return (
 <div style={{  
-  backgroundImage: "url(" + imageUrl + ")",
+  backgroundImage: "url(" + desktopImage + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
